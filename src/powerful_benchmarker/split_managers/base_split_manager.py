@@ -128,7 +128,9 @@ class BaseSplitManager:
         raise NotImplementedError
 
     def set_data_and_label_getter(self, data_and_label_getter_keys):
+        print(data_and_label_getter_keys)
         if data_and_label_getter_keys is None:
+            
             self.data_and_label_getter = lambda data: data
         else:
             self.data_and_label_getter = lambda data: tuple(data[k] for k in data_and_label_getter_keys)

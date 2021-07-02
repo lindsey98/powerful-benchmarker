@@ -25,5 +25,7 @@ else:
 
 r = runner(**(args.__dict__))
 from powerful_benchmarker.datasets import logo
+from powerful_benchmarker.split_managers import customize_split
 r.register("dataset", logo)
+r.register("split_manager", customize_split)
 r.run()

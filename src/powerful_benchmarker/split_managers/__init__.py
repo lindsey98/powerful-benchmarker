@@ -4,4 +4,5 @@ from .closed_set_split_manager import ClosedSetSplitManager
 from .index_split_manager import IndexSplitManager
 from .predefined_split_manager import PredefinedSplitManager
 from .mlrc_split_manager import MLRCSplitManager
+from .customize_split import CustomSplitManager
 
