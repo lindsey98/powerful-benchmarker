@@ -18,7 +18,7 @@ class CustomSplitManager(BaseSplitManager):
             output[transform_type] = {}
             for split_name, v2 in v1.items():
                 indices = v2.get_split_indices(split_name)
-#                 print(indices)
+#                 print(split_name)
                 if indices is not None:
                     output[transform_type][split_name] = torch.utils.data.Subset(v2, indices)
                 else:
