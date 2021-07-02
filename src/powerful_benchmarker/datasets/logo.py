@@ -18,11 +18,7 @@ class LogoDataset(Dataset):
         self.transform = transform 
 
     def get_split_indices(self, split_name):
-        if split_name == "val":
-            return self.test_set_indices
         if split_name == "test":
-            return self.test_set_indices
-        if split_name == "eval":
             return self.test_set_indices
         return None
     
