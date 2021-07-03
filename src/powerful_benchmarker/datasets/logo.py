@@ -27,3 +27,19 @@ class LogoDataset(Dataset):
 
     def __getitem__(self, idx):
         return self.dataset[idx]
+    
+    
+class LogoDatasetPlain(Dataset):
+    def __init__(self, root, transform=None, download=False):
+        
+        self.dataset = datasets.ImageFolder(root, transform=transform)
+        
+        # these look useless, but are required by powerful-benchmarker
+        self.labels = np.array([b for (a, b) in self.dataset.imgs])
+        self.transform = transform 
+
+    def __len__(self):
+        return len(self.dataset)
+
+    def __getitem__(self, idx):
+        return self.dataset[idx]
